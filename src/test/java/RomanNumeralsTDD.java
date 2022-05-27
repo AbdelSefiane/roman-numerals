@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 public class RomanNumeralsTDD {
 
-
     public static final RomanConverterTDD ROMAN_CONVERTER = new RomanConverterTDD();
 
     @Test
@@ -23,4 +22,8 @@ public class RomanNumeralsTDD {
         assertEquals("IV", ROMAN_CONVERTER.intToString(4));
     }
 
+    @Test
+    public void shouldConvert5ToV() {
+        assertEquals("V", ROMAN_CONVERTER.intToString(5));
+    }
 }

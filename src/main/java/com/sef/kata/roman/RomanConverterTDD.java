@@ -12,7 +12,10 @@ public class RomanConverterTDD implements Converter {
         LinkedList<String> output = new LinkedList<>();
         int rest = i;
         while(rest>0){
-            if(rest-4>=0){
+            if(rest-5==0){
+                output.push(V);
+                rest = rest-5;
+            } else if(rest-4>=0){
                 output.push(V);
                 rest = rest-3;
             } else if(rest-1>=0){
