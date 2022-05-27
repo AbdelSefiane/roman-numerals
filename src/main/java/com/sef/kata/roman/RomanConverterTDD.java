@@ -4,6 +4,10 @@ public class RomanConverterTDD implements Converter{
 
     @Override
     public String intToString(int i) {
-        return "I";
+        if(1 == i){
+            return "I";
+        } else {
+            return "II";
+        }
     }
 }
