@@ -16,4 +16,10 @@ public class RomanNumeralsTDD {
         RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
         assertEquals("II", romanConverterTDD.intToString(2));
     }
+
+    @Test
+    public void shouldConvert3ToIII() {
+        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
+        assertEquals("III", romanConverterTDD.intToString(3));
+    }
 }
