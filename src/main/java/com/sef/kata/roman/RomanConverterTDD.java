@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class RomanConverterTDD implements Converter {
 
     public static final String I = "I";
+    public static final String V = "V";
 
     @Override
     public String intToString(int i) {
@@ -12,7 +13,7 @@ public class RomanConverterTDD implements Converter {
         int rest = i;
         while(rest>0){
             if(rest-4>=0){
-                output.push("V");
+                output.push(V);
                 rest = rest-3;
             } else if(rest-1>=0){
                 output.push(I);

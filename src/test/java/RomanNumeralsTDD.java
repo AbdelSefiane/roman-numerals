@@ -5,27 +5,22 @@ import static org.junit.Assert.assertEquals;
 
 public class RomanNumeralsTDD {
 
-    @Test
-    public void shouldConvert1ToI() {
-        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
-        assertEquals(RomanConverterTDD.I, romanConverterTDD.intToString(1));
-    }
+
+    public static final RomanConverterTDD ROMAN_CONVERTER = new RomanConverterTDD();
 
     @Test
-    public void shouldConvert2ToII() {
-        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
-        assertEquals("II", romanConverterTDD.intToString(2));
+    public void shouldConvert1ToI() {
+        assertEquals(RomanConverterTDD.I, ROMAN_CONVERTER.intToString(1));
     }
 
     @Test
     public void shouldConvert3ToIII() {
-        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
-        assertEquals("III", romanConverterTDD.intToString(3));
+        assertEquals("III", ROMAN_CONVERTER.intToString(3));
     }
 
     @Test
     public void shouldConvert4ToIV() {
-        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
-        assertEquals("IV", romanConverterTDD.intToString(4));
+        assertEquals("IV", ROMAN_CONVERTER.intToString(4));
     }
+
 }
