@@ -22,4 +22,10 @@ public class RomanNumeralsTDD {
         RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
         assertEquals("III", romanConverterTDD.intToString(3));
     }
+
+    @Test
+    public void shouldConvert4ToIV() {
+        RomanConverterTDD romanConverterTDD = new RomanConverterTDD();
+        assertEquals("IV", romanConverterTDD.intToString(4));
+    }
 }
