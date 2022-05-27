@@ -58,7 +58,7 @@ public class RomanConverter implements Converter {
     }
 
     @Override
-    public String convert(int convertedValue) {
+    public String intToString(int convertedValue) {
         if (convertedValue <= 0) {
             throw new RuntimeException("NUMBERS ARE FOR TRADING GOODS&SERVICES.");
         }

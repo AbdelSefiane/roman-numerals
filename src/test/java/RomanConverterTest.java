@@ -1,12 +1,9 @@
 import com.sef.kata.roman.RomanConverter;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.LinkedList;
-import java.util.Spliterator;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -36,7 +33,7 @@ public class RomanConverterTest {
     @MethodSource(value = "conversionTestMethodInput")
     public void convertShouldConvertIntToRoman(int decimal, String roman) {
         RomanConverter converter = new RomanConverter();
-        assertEquals(roman, converter.convert(decimal));
+        assertEquals(roman, converter.intToString(decimal));
     }
 
     private static Stream lowerLimitInput() {
@@ -59,6 +56,6 @@ public class RomanConverterTest {
     @Test
     public void toto() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("CCCXXXIII", converter.convert(333));
+        assertEquals("CCCXXXIII", converter.intToString(333));
     }
 }
