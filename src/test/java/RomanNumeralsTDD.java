@@ -1,29 +1,45 @@
+import com.sef.kata.roman.RomanConverter;
 import com.sef.kata.roman.RomanConverterTDD;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class RomanNumeralsTDD {
 
-    public static final RomanConverterTDD ROMAN_CONVERTER = new RomanConverterTDD();
 
     @Test
     public void shouldConvert1ToI() {
-        assertEquals(RomanConverterTDD.I, ROMAN_CONVERTER.intToString(1));
+        RomanConverterTDD rc = new RomanConverterTDD();
+        assertEquals(RomanConverterTDD.I, rc.intToString(1));
     }
 
     @Test
     public void shouldConvert3ToIII() {
-        assertEquals("III", ROMAN_CONVERTER.intToString(3));
+        RomanConverterTDD rc = new RomanConverterTDD();
+        assertEquals("III", rc.intToString(3));
     }
 
     @Test
     public void shouldConvert4ToIV() {
-        assertEquals("IV", ROMAN_CONVERTER.intToString(4));
+        RomanConverterTDD rc = new RomanConverterTDD();
+        assertEquals("IV",rc.intToString(4));
     }
 
     @Test
     public void shouldConvert5ToV() {
-        assertEquals("V", ROMAN_CONVERTER.intToString(5));
+        RomanConverterTDD rc = new RomanConverterTDD();
+        assertEquals(RomanConverterTDD.V, rc.intToString(5));
+    }
+
+    @Test
+    public void nbOccurenceUnitShouldCountOnlyReleventUnit(){
+        RomanConverterTDD rc = new RomanConverterTDD();
+        //Integer[] integers = rc.nbOccurenceUnit(1);
+        rc.nbOccurenceUnit(1);
+        Integer[] unitCarriage = rc.getUnitCarriage();
+        assertEquals(unitCarriage[0],Integer.valueOf(1));
+        assertEquals(unitCarriage[1],Integer.valueOf(0));
     }
 }
