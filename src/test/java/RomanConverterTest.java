@@ -22,7 +22,7 @@ public class RomanConverterTest {
                          Arguments.of(110, "CX"),
                          Arguments.of(111, "CXI"),
                          Arguments.of(119, "CXIX"),
-                         Arguments.of(190, "CXC"),
+                         Arguments.of(194, "CXCIV"),
                          Arguments.of(222, "CCXXII"),
                          Arguments.of(333, "CCCXXXIII"),
                          Arguments.of(1234, "MCCXXXIV")
@@ -56,6 +56,6 @@ public class RomanConverterTest {
     @Test
     public void toto() {
         RomanConverter converter = new RomanConverter();
-        assertEquals("CCCXXXIII", converter.intToString(333));
+        assertEquals("XCIV", converter.intToString(94));
     }
 }
