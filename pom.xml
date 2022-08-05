@@ -12,6 +12,13 @@
     <groupId>org.example</groupId>
     <artifactId>roman-numerals</artifactId>
     <version>1.0</version>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/phanatic</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
 
         <dependency>
