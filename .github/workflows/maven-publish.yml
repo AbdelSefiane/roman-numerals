@@ -17,12 +17,6 @@ jobs:
       packages: write
 
     steps:
-      - name: maven-settings-xml-action
-        uses: whelk-io/maven-settings-xml-action@v20
-        with:
-          repositories: '[{ "id": "ossrh", "url": "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/" },{ "id": "ossrh-release", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots" }]'
-          servers: '[{ "id": "ossrh", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" },{ "id": "ossrh-release", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" }]'
-
       - uses: actions/checkout@v3
       - name: Set up JDK 16
         uses: actions/setup-java@v3
@@ -31,6 +25,12 @@ jobs:
           distribution: 'temurin'
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
+
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v20
+        with:
+          repositories: '[{ "id": "ossrh", "url": "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/" },{ "id": "ossrh-release", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots" }]'
+          servers: '[{ "id": "ossrh", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" },{ "id": "ossrh-release", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" }]'
 
       - name: Build with Maven
         env:
