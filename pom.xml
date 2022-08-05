@@ -11,7 +11,7 @@
     </parent>
     <groupId>io.github.abdelsefiane</groupId>
     <artifactId>roman-numerals</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <distributionManagement>
         <snapshotRepository>
@@ -19,7 +19,7 @@
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
+            <id>ossrh-release</id>
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
