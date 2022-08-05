@@ -69,7 +69,6 @@ public class RomanConverter implements Converter {
         if (this.lowerLimit.getValue() == convertedValue) {
             return this.lowerLimit.getSymbol();
         }
-
         while (conversionRest > 0) {
             lowerRest = conversionRest - this.lowerLimit.getValue();
             if (lowerRest < 0) {
