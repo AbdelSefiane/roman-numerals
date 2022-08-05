@@ -20,8 +20,8 @@ jobs:
       - name: maven-settings-xml-action
         uses: whelk-io/maven-settings-xml-action@v20
         with:
-          repositories: '[{ "id": "ossrh", "url": "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/" },{ "id": "ossrh", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots" }]'
-          servers: '[{ "id": "ossrh", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" }]'
+          repositories: '[{ "id": "ossrh", "url": "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/" },{ "id": "ossrh-release", "url": "https://s01.oss.sonatype.org/content/repositories/snapshots" }]'
+          servers: '[{ "id": "ossrh", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" },{ "id": "ossrh-release", "username": "3FQW7/EP", "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ" }]'
 
       - uses: actions/checkout@v3
       - name: Set up JDK 16
