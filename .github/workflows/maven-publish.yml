@@ -27,51 +27,7 @@ jobs:
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
       - name: Build with Maven
-        run: mvn -B -DskipTests-true package --file pom.xml
-
-      - name: Setup Remote Repo for Deploy
-        uses: whelk-io/maven-settings-xml-action@v20
-        with:
-          repositories: >
-            [
-              {
-                "id": "ossrh",
-                "name": "ossrh-release",
-                "url": "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/",
-                "releases": {
-                  "enabled": "true",
-                  "updatePolicy": "always",
-                  "checksumPolicy": "fail"
-                },
-                "snapshots": {
-                  "enabled": "false",
-                  "updatePolicy": "always",
-                  "checksumPolicy": "fail"
-                }
-              }
-            ]
-          servers: >
-            [
-              {
-                "id": "ossrh",
-                "username": "3FQW7/EP",
-                "password": "qyWY1xlHDIzHnanvaiFlPPXEhUlfAvy8ounhR8OkITZJ",
-                "configuration": {
-                  "httpConfiguration": {
-                    "all": {
-                      "usePreemptive": "true"
-                    }
-                  }
-                }
-              }
-            ]
-          output_file: $GITHUB_WORKSPACE/settings2.xml
-
-      - name: Print Setup settings.xml
-        run: cat $GITHUB_WORKSPACE/settings2.xml
-
-      - name: Publish to OSSRH
-        run: mvn deploy -X -s $GITHUB_WORKSPACE/settings2.xml
+        run: mvn clean package -B -DskipTests-true --file pom.xml
         
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
